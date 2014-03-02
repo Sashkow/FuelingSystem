@@ -7,7 +7,13 @@
 
 #include "ElectricCar.h"
 
-ElectricCar::~ElectricCar() {
-	// TODO Auto-generated destructor stub
+ElectricCar::~ElectricCar() {}
+
+void ElectricCar::fill(){cout<<"electric car is filled"<<endl;}
+
+ptime ElectricCar::evaluateFuelingTime(){
+	cout<<"time evaluated"<<endl;
+	return second_clock::local_time();
 }
+
 

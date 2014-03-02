@@ -7,108 +7,45 @@
 
 #ifndef FUELABLE_H_
 #define FUELABLE_H_
-//#include "boost/date_time/gregorian/gregorian.hpp"
+
+#include "boost/date_time/gregorian/gregorian.hpp"
+#include "boost/date_time/posix_time/posix_time.hpp"
+
+using namespace boost::posix_time;
+using namespace boost::gregorian;
 
 
-//using namespace boost::gregorian;
 
+#include "FuelType.h"
 
-
-enum FuelType{PETROL, ELECTRICITY};
-
-class Fuelable{
-/*
-
-
+class Vehicle{
 private:
-	date d;
 
 	float tankCapacity;
 	float fuelInTank;
-	FuelType requiredFuelType;
+	//FuelType requiredFuelType;
+	//static std::map < FuelType, std::string> fuelUnitsMap;
 	float amountToTake;
 
-	time_t waitingForFuelTime;
-	time waitingForUpdatedStatisticsTime;
+
+
+	//date arrivalDate; 					//not here
+
+	ptime waitingForFuelTime;
+	ptime waitingForUpdatedStatisticsTime;
 
 	float cash;
 
 public:
-	time evaluateFuelingTime()=0;
 
 
-float getAmountToTake() const
-{
-    return amountToTake;
-}
+	virtual ptime evaluateFuelingTime() = 0;
+	virtual void fill()=0;
+	virtual ~Vehicle(){}
 
-void setAmountToTake(float amountToTake)
-{
-    this->amountToTake = amountToTake;
-}
-
-float getCash() const
-{
-    return cash;
-}
-
-void setCash(float cash)
-{
-    this->cash = cash;
-}
-
-float getFuelInTank() const
-{
-    return fuelInTank;
-}
-
-void setFuelInTank(float fuelInTank)
-{
-    this->fuelInTank = fuelInTank;
-}
-
-FuelType getRequiredFuelType() const
-{
-    return requiredFuelType;
-}
-
-void setRequiredFuelType(FuelType requiredFuelType)
-{
-    this->requiredFuelType = requiredFuelType;
-}
-
-float getTankCapacity() const
-{
-    return tankCapacity;
-}
-
-void setTankCapacity(float tankCapacity)
-{
-    this->tankCapacity = tankCapacity;
-}
-
-time getWaitingForFuelTime() const
-{
-    return waitingForFuelTime;
-}
-
-void setWaitingForFuelTime(time waitingForFuelTime)
-{
-    this->waitingForFuelTime = waitingForFuelTime;
-}
-
-time getWaitingForUpdatedStatisticsTime() const
-{
-    return waitingForUpdatedStatisticsTime;
-}
-
-void setWaitingForUpdatedStatisticsTime(time waitingForUpdatedStatisticsTime)
-{
-    this->waitingForUpdatedStatisticsTime = waitingForUpdatedStatisticsTime;
-}
-*/
 
 };
+
 
 
 

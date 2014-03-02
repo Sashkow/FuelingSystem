@@ -8,14 +8,21 @@
 #ifndef ELECTRICCAR_H_
 #define ELECTRICCAR_H_
 
-#include "../Fuelable.h"
+#include "../Vehicle.h"
 
 
 
 
-class ElectricCar:Fuelable{
+class ElectricCar :public Vehicle{
 public:
+
+
 	virtual ~ElectricCar();
+	void fill();
+	ptime evaluateFuelingTime();
+
+
+
 
 };
 

@@ -7,10 +7,12 @@
 
 #ifndef PETROLTRUCK_H_
 #define PETROLTRUCK_H_
-#include "Fuelable.h"
+#include "../Vehicle.h"
 
-class PetrolTruck: Fuelable {
-
+class PetrolTruck: Vehicle {
+	~PetrolTruck(){}
+	void fill();
+	ptime evaluateFuelingTime();
 };
 
 

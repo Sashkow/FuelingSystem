@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : FuelingSystem.cpp
-// Author      : 
+// Author      :
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
@@ -8,12 +8,24 @@
 
 #include <iostream>
 #include "boost/date_time/gregorian/gregorian.hpp"
+#include <stdlib.h>
+
+#include "Vehicle.h"
+#include "Vehicles/PetrolCar.h"
+#include "VehicleFactory.h"
+#include "Simulation.h"
+
+//#include "koolplot1_2/koolplot.h"
+
+
 
 using namespace boost::gregorian;
 using namespace std;
 
+
+
 int main() {
-	date weekstart(2002,Feb,1);
+	/*date weekstart(2002,Feb,1);
 	    date weekend  = weekstart + weeks(1);
 	    date d2 = d2 + days(5);
 	    date today = day_clock::local_day();
@@ -43,7 +55,35 @@ int main() {
 		typedef nth_day_of_the_week_in_month nth_dow;
 	    nth_dow labor_day(nth_dow::first,Monday, Sep);
 	    //calculate a specific date for 2004 from functor
-	    date d6 = labor_day.get_date(2004);
+	    date d6 = labor_day.get_date(2004);*/
+
+
+
+	VehicleFactory vehicleFactory=VehicleFactory();
+
+	Vehicle* v=vehicleFactory.newVehicle("PetrolCar");
+	cout<< v->evaluateFuelingTime()<<endl;
+
+
+	Simulation sim=Simulation();
+	//time_duration dur=hours(1)+minutes(2);
+	sim.setArrivalRate(120);
+	sim.setStepLength(minutes(2));
+	sim.setCurrentTimestep(3);
+
+	for (int i = 0; i < 10; ++i) {
+		sim.setCurrentTimestep(i);
+		cout<< "p(" <<i<<") = "<< sim.poissonArrivalProbability()<<
+				" sum_p("<<i<<") ="<<sim.cummulativePoissonArivalProbability()<<endl;
+
+	}
+
+	//cout<<sim.cummulativePoissonArivalProbability()<<endl;
+
+
+	//Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
+	//plot(x, y);
+
 
 	return 0;
 }

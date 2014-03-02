@@ -9,14 +9,17 @@
 #ifndef PETROLCAR_H_
 #define PETROLCAR_H_
 
-#include "../Fuelable.h"
+#include "../Vehicle.h"
 
 
 #include <time.h>
 
+class PetrolCar: public Vehicle{
+public:
+	ptime evaluateFuelingTime();
+	void fill();
+	virtual ~PetrolCar(){}
 
-
-class PetrolCar: public Fuelable{
 
 };
 
