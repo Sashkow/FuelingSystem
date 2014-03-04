@@ -70,15 +70,20 @@ int main() {
 	sim.setArrivalRate(120);
 	sim.setStepLength(minutes(2));
 	sim.setCurrentTimestep(3);
+/*
+	sim.evaluatePoissonArivalProbabilityDistribution();
+	for (int i = 0; i < sim.getArrivalProbabilityDistribution().size(); ++i) {
 
-	for (int i = 0; i < 10; ++i) {
-		sim.setCurrentTimestep(i);
-		cout<< "p(" <<i<<") = "<< sim.poissonArrivalProbability()<<
-				" sum_p("<<i<<") ="<<sim.cummulativePoissonArivalProbability()<<endl;
+		cout<< "p(" <<i<<") = "<< (sim.getArrivalProbabilityDistribution())[i]<<
+				" sum_p("<<i<<") ="<<(sim.getCummmulativeArrivalProbabilityDistribution())[i]<<endl;
 
 	}
+*/
 
-	//cout<<sim.cummulativePoissonArivalProbability()<<endl;
+	for (int i=0; i<100; i++){
+		cout<< sim.evaluateRandomVehiclesAmount()<<endl;
+
+		}
 
 
 	//Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
