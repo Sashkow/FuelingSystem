@@ -6,10 +6,7 @@
  */
 #include "VehicleFactory.h"
 
-map<int,string> VehicleFactory::vehicleMap{
-	    {0,"PetrolCar" },
-	    {1,"ElectricCar" }
-	};
+
 
 
 

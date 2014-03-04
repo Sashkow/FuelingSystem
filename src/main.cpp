@@ -14,6 +14,7 @@
 #include "Vehicles/PetrolCar.h"
 #include "VehicleFactory.h"
 #include "Simulation.h"
+#include "Station.h"
 
 //#include "koolplot1_2/koolplot.h"
 
@@ -59,11 +60,9 @@ int main() {
 
 
 
-	VehicleFactory vehicleFactory=VehicleFactory();
+	//VehicleFactory vehicleFactory=VehicleFactory();
 
 
-	Vehicle* v=vehicleFactory.newVehicle("PetrolCar");
-	cout<< v->evaluateFuelingTime()<<endl;
 
 
 	Simulation sim=Simulation();
@@ -82,9 +81,20 @@ int main() {
 */
 
 
-	//vector<Vehicle> v=sim.generateVehicles();
 
-	//cout<<&v[0]<<endl;
+
+	vector<Vehicle*> v=sim.generateVehicles();
+
+	Station station=Station();
+
+	station.addToVehicleDeque(v);
+
+	station.processVehicles();
+
+
+
+
+
 
 
 	//Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;

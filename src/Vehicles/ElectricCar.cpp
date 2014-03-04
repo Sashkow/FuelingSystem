@@ -9,7 +9,8 @@
 
 ElectricCar::~ElectricCar() {}
 
-void ElectricCar::fill(){cout<<"electric car is filled"<<endl;}
+void ElectricCar::fill(){cout<<"electric car is filled"<<endl;
+}
 
 ptime ElectricCar::evaluateFuelingTime(){
 	cout<<"time evaluated"<<endl;

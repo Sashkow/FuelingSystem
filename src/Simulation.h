@@ -48,7 +48,7 @@ public:
 
 
 
-	vector<Vehicle> generateVehicles();
+	vector<Vehicle*> generateVehicles();
 	virtual ~Simulation();
 
 	const float getMinimalSignificantProbability() const {

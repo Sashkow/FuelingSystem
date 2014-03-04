@@ -16,7 +16,9 @@
 class ElectricCar :public Vehicle{
 public:
 
-
+	ElectricCar():Vehicle(){
+		this->requiredFuelType=FuelType::ELECTRICITY;
+	}
 	virtual ~ElectricCar();
 	void fill();
 	ptime evaluateFuelingTime();

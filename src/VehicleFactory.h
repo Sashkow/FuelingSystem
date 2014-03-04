@@ -14,10 +14,12 @@ using namespace std;
 
 class VehicleFactory{
 private:
-	static map<int,string> vehicleMap;
+
 
 
 public:
+
+
 
 
 	VehicleFactory(){
@@ -32,8 +34,11 @@ public:
     }
 
     static Vehicle* randomVehicle(){
-    	int randomVehicleTypeNumber= rand()%vehicleMap.size();
-    	return newVehicle(vehicleMap[randomVehicleTypeNumber]);
+    	int randomVehicleTypeNumber= rand()%Vehicle::vehicleMap.size();
+    	Vehicle* v=newVehicle(Vehicle::vehicleMap[randomVehicleTypeNumber]);
+    	v->setRandomProperties();
+    	return v;
+
     }
 
 

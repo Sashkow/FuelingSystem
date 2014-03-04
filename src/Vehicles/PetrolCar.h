@@ -16,6 +16,9 @@
 
 class PetrolCar: public Vehicle{
 public:
+	PetrolCar():Vehicle(){
+		this->requiredFuelType=FuelType::PETROL;
+	}
 	ptime evaluateFuelingTime();
 	void fill();
 	virtual ~PetrolCar(){}

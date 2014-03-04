@@ -14,7 +14,7 @@
 
 using namespace std;
 
-enum FuelType{PETROL, ELECTRICITY};
+enum FuelType{PETROL=0, ELECTRICITY, fuelTypesAmount};
 
 static map< FuelType, string> fuelUnitsMap{
     {FuelType::PETROL, "liters" },

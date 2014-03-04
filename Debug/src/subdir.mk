@@ -5,19 +5,28 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/FuelType.cpp \
+../src/FuelingPoint.cpp \
 ../src/Simulation.cpp \
+../src/Station.cpp \
+../src/Vehicle.cpp \
 ../src/VehicleFactory.cpp \
 ../src/main.cpp 
 
 OBJS += \
 ./src/FuelType.o \
+./src/FuelingPoint.o \
 ./src/Simulation.o \
+./src/Station.o \
+./src/Vehicle.o \
 ./src/VehicleFactory.o \
 ./src/main.o 
 
 CPP_DEPS += \
 ./src/FuelType.d \
+./src/FuelingPoint.d \
 ./src/Simulation.d \
+./src/Station.d \
+./src/Vehicle.d \
 ./src/VehicleFactory.d \
 ./src/main.d 
 

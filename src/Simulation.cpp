@@ -18,23 +18,14 @@ Simulation::~Simulation() {
 	// TODO Auto-generated destructor stub
 }
 
-vector<Vehicle> Simulation::generateVehicles(){
-	vector<Vehicle> vehicleVector= vector<Vehicle>();
-	Vehicle* currentVehiclePtr=VehicleFactory::randomVehicle();
-	cout<<&currentVehiclePtr<<endl;
-	//vehicleVector.push_back(*currentVehiclePtr);
-
-
-
-/*
-
+vector<Vehicle*> Simulation::generateVehicles(){
+	vector<Vehicle*> vehicleVector= vector<Vehicle*>();
+	Vehicle* currentVehiclePtr;
 	for (int i=0;i<evaluateRandomVehiclesAmount();i++){
-		currentVehiclePtr=
-		vehicleVector.push_back(*currentVehiclePtr);
-		delete currentVehiclePtr;
+		currentVehiclePtr=VehicleFactory::randomVehicle();
+		vehicleVector.push_back(currentVehiclePtr);
 
 	}
-*/
 
 	return vehicleVector;
 }
