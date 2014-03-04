@@ -20,22 +20,36 @@ Simulation::~Simulation() {
 
 vector<Vehicle> Simulation::generateVehicles(){
 	vector<Vehicle> vehicleVector= vector<Vehicle>();
-	VehicleFactory vehicleFactory= VehicleFactory();
+	Vehicle* currentVehiclePtr=VehicleFactory::randomVehicle();
+	cout<<&currentVehiclePtr<<endl;
+	//vehicleVector.push_back(*currentVehiclePtr);
 
-	//vehicleVector.insert();
+
+
+/*
+
+	for (int i=0;i<evaluateRandomVehiclesAmount();i++){
+		currentVehiclePtr=
+		vehicleVector.push_back(*currentVehiclePtr);
+		delete currentVehiclePtr;
+
+	}
+*/
+
+	return vehicleVector;
 }
 
 int Simulation::evaluateRandomVehiclesAmount(){
-	int carsAmount;
+	int carsAmount=0;
 	this->evaluatePoissonArivalProbabilityDistribution();
 	float randomValue =((double) rand() / (RAND_MAX)); 							//0 to 1
-	int i=0;
 
-	while (this->getCummmulativeArrivalProbabilityDistribution()[i]< randomValue){
-		i+=1;
+
+	while (this->getCummmulativeArrivalProbabilityDistribution()[carsAmount]< randomValue){
+		carsAmount+=1;
 	}
 
-	return i;
+	return carsAmount;
 }
 
 

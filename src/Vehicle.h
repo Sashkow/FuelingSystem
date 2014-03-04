@@ -27,8 +27,6 @@ private:
 	//static std::map < FuelType, std::string> fuelUnitsMap;
 	float amountToTake;
 
-
-
 	//date arrivalDate; 					//not here
 
 	ptime waitingForFuelTime;

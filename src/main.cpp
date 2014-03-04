@@ -61,13 +61,14 @@ int main() {
 
 	VehicleFactory vehicleFactory=VehicleFactory();
 
+
 	Vehicle* v=vehicleFactory.newVehicle("PetrolCar");
 	cout<< v->evaluateFuelingTime()<<endl;
 
 
 	Simulation sim=Simulation();
 	//time_duration dur=hours(1)+minutes(2);
-	sim.setArrivalRate(120);
+	sim.setArrivalRate(60);
 	sim.setStepLength(minutes(2));
 	sim.setCurrentTimestep(3);
 /*
@@ -80,10 +81,10 @@ int main() {
 	}
 */
 
-	for (int i=0; i<100; i++){
-		cout<< sim.evaluateRandomVehiclesAmount()<<endl;
 
-		}
+	//vector<Vehicle> v=sim.generateVehicles();
+
+	//cout<<&v[0]<<endl;
 
 
 	//Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
