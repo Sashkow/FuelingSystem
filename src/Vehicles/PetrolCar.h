@@ -19,7 +19,7 @@ public:
 	PetrolCar():Vehicle(){
 		this->requiredFuelType=FuelType::PETROL;
 	}
-	ptime evaluateFuelingTime();
+	time_duration evaluateFuelingTime();
 	void fill();
 	virtual ~PetrolCar(){}
 

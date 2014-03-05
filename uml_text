@@ -1,0 +1,138 @@
+Station "1" *-- "many" FuelingPoint : contains
+FuelingPoint "1" *-- "many" Vehicle  : contains
+
+
+Station "1" *-- "many" Vehicle  : contains
+class Station {
+        //Array<FuelingPoint> fuelingPointsPool
+   
+    //float requestForDiscountFromTheSystem();
+    //StationState state;
+    
+    void addToVehicleDeque(vector<Vehicle*> vehicleVector);
+
+        void processVehicles();
+    
+}
+
+
+
+
+class FuelingPoint{
+        Deque<Vehicle> vehicles
+    Set<FuelType> avalableFuels
+    FuelingPointState state
+    
+    LogInfo doFuel()
+    Time evaluateFuelingTime()
+    
+}
+
+FuelingPoint "1" *-- "many" FuelingPointState  : contains
+enum FuelingPointState {
+        BUISY,
+    FREE
+
+}
+
+Vehicle "1" *-- "many" FuelType
+enum FuelType{
+    PETROL,ELECTRICITY
+}
+
+abstract class Vehicle{
+
+        #const float minTankCapacity=1;
+        #const float maxTankCapacity=100;
+
+        #const float minFuelInTankPercentage=0;
+        #const float maxFuelInTankPercentage=100;
+
+        #const float minWaitingTimeInMinutes=5;
+        #const float maxWaitingTimeInMinutes=10;
+
+        #float tankCapacity;
+        #float fuelInTankPercentage;
+
+        #FuelType requiredFuelType;
+        
+        #float amountToTake;
+
+        #date arrivalDate;
+
+        #time_duration waitingForFuelTime;
+    
+    +{static} map<int,string> vehicleMap;
+   
+        +Vehicle()
+    +{abstract} time_duration evaluateFuelingTime() = 0;
+    +{abstract} void fill()=0;
+    
+    +void setRandomProperties()
+}
+
+
+Vehicle <|-- PetrolCar
+class PetrolCar{
+        
+}
+
+Vehicle <|-- ElectricCar
+class PetrolCar{
+        
+}
+
+VehicleFactory -- Vehicle: constructs
+class VehicleFactory{
+    {static} Vehicle* newVehicle(const std::string &className)
+    {static} Vehicle* randomVehicle(){  
+}
+
+
+
+
+
+
+class Simulation{
+    -float arrivalRate;                 //vehicles per hour
+    
+    //how much time one descreet step takes irl
+    //any object can change state only once a step
+        -time_duration stepLength;
+    
+        -const float defaultArrivalRate=120;
+        -const time_duration defaultStepLength=minutes(1);
+        -const float minimalSignificantProbability=0.001;
+
+        -vector<float> arrivalProbabilityDistribution;                  
+        -vector<float> cummmulativeArrivalProbabilityDistribution;
+
+        -int currentTimestep;
+
+        -long highestUnitsInMilliseconds(time_duration dur);
+        -long toMilliseconds(const time_duration& dur);
+        -float hoursToHighestUnits(time_duration dur);
+    
+    Simulation();
+
+        +void evaluatePoissonArivalProbabilityDistribution();
+
+        +int evaluateRandomVehiclesAmount();
+
+        +float evaluateArrivalRatePerStepLength();
+
+        +vector<Vehicle*> generateVehicles();
+    
+
+}
+
+
+
+
+class Deque(){
+        // from library
+}
+
+class Time(){
+        //from library
+} 

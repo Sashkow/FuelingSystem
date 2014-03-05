@@ -12,9 +12,9 @@ ElectricCar::~ElectricCar() {}
 void ElectricCar::fill(){cout<<"electric car is filled"<<endl;
 }
 
-ptime ElectricCar::evaluateFuelingTime(){
+time_duration ElectricCar::evaluateFuelingTime(){
 	cout<<"time evaluated"<<endl;
-	return second_clock::local_time();
+	return minutes(10); //todo
 }
 
 

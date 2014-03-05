@@ -7,9 +7,9 @@
 
 #include "PetrolCar.h"
 
-ptime PetrolCar::evaluateFuelingTime(){
-		ptime t=second_clock::local_time();
-		return t;
+time_duration PetrolCar::evaluateFuelingTime(){
+
+		return minutes(3); //todo
 	}
 
 void PetrolCar::fill(){cout<<"petrol car is filled"<<endl;}

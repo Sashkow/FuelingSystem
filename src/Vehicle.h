@@ -51,13 +51,13 @@ public:
 
 	static map<int,string> vehicleMap;
 
-	Vehicle(){
+    Vehicle(){
 		ptime now = second_clock::local_time();
 		arrivalDate=now.date();
 
 	}
 
-	virtual ptime evaluateFuelingTime() = 0;
+	virtual time_duration evaluateFuelingTime() = 0;
 	virtual void fill()=0;
 
 	float getAmountToTake() const {
@@ -131,7 +131,8 @@ public:
 	void setWaitingForFuelTime(time_duration waitingForFuelTime) {
 		this->waitingForFuelTime = waitingForFuelTime;
 	}
-	virtual void setRandomProperties(){
+
+	void setRandomProperties(){
 		tankCapacity=random()%static_cast<int>((maxTankCapacity-minTankCapacity)+minTankCapacity);
 		fuelInTankPercentage=random()%static_cast<int>((maxFuelInTankPercentage-minFuelInTankPercentage)+minFuelInTankPercentage);
 		requiredFuelType=static_cast<FuelType>(random()%(static_cast<int>(FuelType::fuelTypesAmount)));

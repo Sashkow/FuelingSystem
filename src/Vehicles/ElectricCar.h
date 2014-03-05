@@ -21,7 +21,7 @@ public:
 	}
 	virtual ~ElectricCar();
 	void fill();
-	ptime evaluateFuelingTime();
+	time_duration evaluateFuelingTime();
 
 
 
