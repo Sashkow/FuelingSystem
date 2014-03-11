@@ -11,6 +11,7 @@
 #include "boost/date_time/posix_time/posix_time.hpp"
 #include <vector>
 
+#include "System.h"
 #include "VehicleFactory.h"
 
 using namespace std;
@@ -19,8 +20,12 @@ using namespace boost::posix_time;
 
 class Simulation {
 private:
+
+	System sys;
+
 	float arrivalRate;         	//vehicles per hour
 	time_duration stepLength;
+
 	const float defaultArrivalRate=120;
 	const time_duration defaultStepLength=minutes(1);
 	const float minimalSignificantProbability=0.001;
@@ -30,14 +35,11 @@ private:
 
 	int currentTimestep;
 
+
+
 	long highestUnitsInMilliseconds(time_duration dur);
 	long toMilliseconds(const time_duration& dur);
 	float hoursToHighestUnits(time_duration dur);
-
-public:
-
-
-	Simulation();
 
 	void evaluatePoissonArivalProbabilityDistribution();
 
@@ -45,11 +47,22 @@ public:
 
 	float evaluateArrivalRatePerStepLength();
 
+public:
 
 
+	Simulation();
 
 	vector<Vehicle*> generateVehicles();
+
+	void start();
+	void step();
+
+
 	virtual ~Simulation();
+
+	const float getStepLengthInSeconds(){
+		return static_cast<float>(toMilliseconds(this->stepLength))/1000;
+	}
 
 	const float getMinimalSignificantProbability() const {
 		return minimalSignificantProbability;

@@ -14,7 +14,7 @@ void ElectricCar::fill(){cout<<"electric car is filled"<<endl;
 
 time_duration ElectricCar::evaluateFuelingTime(){
 	cout<<"time evaluated"<<endl;
-	return minutes(10); //todo
+	return time_duration(minutes(10)); //todo
 }
 
 

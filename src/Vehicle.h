@@ -1,9 +1,3 @@
-/*
- * Fuelable.h
- *
- *  Created on: 23 лют. 2014
- *      Author: sashko
- */
 
 #ifndef FUELABLE_H_
 #define FUELABLE_H_

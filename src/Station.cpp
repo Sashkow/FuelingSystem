@@ -1,14 +1,19 @@
-/*
- * Station.cpp
- *
- *  Created on: 4 бер. 2014
- *      Author: sashko
- */
+
 
 #include "Station.h"
+Station::Station(){
+	this->clientSocket= ClientSocket("localhost", 30000);
+	this->fuelingPointsPool=vector<FuelingPoint>();
+
+	this->fuelingPointsPool.push_back(FuelingPoint());
+	this->fuelingPointsPool.push_back(FuelingPoint());
+	this->fuelingPointsPool.push_back(FuelingPoint());
+
+
+}
 
 Station::~Station() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void Station::addToVehicleDeque(vector<Vehicle*> vehicleVector){
@@ -27,6 +32,30 @@ void Station::processVehicles(){
 		delete currentVehicle;
 
 	}
+}
+
+void Station::distributeAmongFuelingPoints(){
+	int minlen=this->fuelingPointsPool[0].;
+	FuelingPoint f=FuelingPoint();
+
+
+	while (!(this->vehicleDeque.empty()))
+	{
+
+		for (FuelingPoint f : this->fuelingPointsPool){
+
+			}
+	}
+
+}
+
+void Station::updateState(){
+
+	distributeAmongFuelingPoints();
+	for (FuelingPoint f: this->fuelingPointsPool){
+		f.updateState();
+	}
+
 }
 
 

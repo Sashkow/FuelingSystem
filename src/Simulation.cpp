@@ -1,17 +1,31 @@
 
-/*
- * Simulation.cpp
- *
- *  Created on: 27 лют. 2014
- *      Author: sashko
- */
-
 #include "Simulation.h"
 
 Simulation::Simulation(){
 	this->currentTimestep=0;
 	this->arrivalRate=this->defaultArrivalRate;
 	this->stepLength=this->defaultStepLength;
+
+	this->sys=System();
+	this->sys.run();
+}
+
+void Simulation::start(){
+	while(true){
+		sleep(getStepLengthInSeconds());
+		step();
+	}
+}
+
+void Simulation::step(){
+	//add newly arrived cars to station
+	//distribute among fueling points
+	//update state for each fueling point
+	//update state for
+
+	vector<Vehicle*> vehicles=generateVehicles();
+	this->sys.getStation().addToVehicleDeque(vehicles);
+	this->sys.getStation().updateState();
 }
 
 Simulation::~Simulation() {

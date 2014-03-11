@@ -1,11 +1,4 @@
 
-/*
- * FuelType.h
- *
- *  Created on: 25 лют. 2014
- *      Author: sashko
- */
-
 #ifndef FUELTYPE_H_
 #define FUELTYPE_H_
 

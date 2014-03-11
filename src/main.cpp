@@ -60,16 +60,16 @@ int main() {
 
 
 
-	//VehicleFactory vehicleFactory=VehicleFactory();
+
 
 
 
 
 	Simulation sim=Simulation();
-	//time_duration dur=hours(1)+minutes(2);
-	sim.setArrivalRate(60);
-	sim.setStepLength(minutes(2));
-	sim.setCurrentTimestep(3);
+	sim.setArrivalRate(3600);
+	sim.setStepLength(seconds(1));
+
+
 /*
 	sim.evaluatePoissonArivalProbabilityDistribution();
 	for (int i = 0; i < sim.getArrivalProbabilityDistribution().size(); ++i) {

@@ -1,9 +1,3 @@
-/*
- * Station.h
- *
- *  Created on: 4 бер. 2014
- *      Author: sashko
- */
 
 #ifndef STATION_H_
 #define STATION_H_
@@ -12,6 +6,7 @@
 #include <deque>
 
 #include "Vehicle.h"
+#include "ClientServerSockets/ClientSocket.h"
 
 
 
@@ -20,16 +15,27 @@ using namespace std;
 class Station {
 
 private:
-	deque<Vehicle*> vehicleDeque;
-	//vector<FuelingPoint> fuelingPointsPool;
+	ClientSocket clientSocket;					//initialized in constructor
+    string reply;
+	string message;
+
+	deque<Vehicle*> vehicleDeque;  				//starts empty
+	vector<FuelingPoint> fuelingPointsPool; 	//initialized in constructor
 
 
 public:
+	Station();
 	~Station();
+
+
 
 	void addToVehicleDeque(vector<Vehicle*> vehicleVector);
 
 	void processVehicles();
+
+	void distributeAmongFuelingPoints();
+
+	void updateState();
 
 
 
