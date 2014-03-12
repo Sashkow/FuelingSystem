@@ -1,7 +1,7 @@
 FuelingSystem
 =============
 
-C++ Project on modelling cenrtalized system of fueling stations. Thes model simulates
+C++ Project on modelling cenrtalized system of fueling stations.
 
 Vehicle objects are constructed according to Factory design pattern. 
 
