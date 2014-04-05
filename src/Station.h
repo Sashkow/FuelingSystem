@@ -5,8 +5,12 @@
 #include <vector>
 #include <deque>
 
+#include "FuelingPoint.h"
 #include "Vehicle.h"
+
 #include "ClientServerSockets/ClientSocket.h"
+
+class ClientSocket;
 
 
 

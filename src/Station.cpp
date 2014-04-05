@@ -1,8 +1,9 @@
 
 
 #include "Station.h"
-Station::Station(){
-	this->clientSocket= ClientSocket("localhost", 30000);
+
+Station::Station(): clientSocket(ClientSocket("localhost", 30000)){
+
 	this->fuelingPointsPool=vector<FuelingPoint>();
 
 	this->fuelingPointsPool.push_back(FuelingPoint());
@@ -35,17 +36,21 @@ void Station::processVehicles(){
 }
 
 void Station::distributeAmongFuelingPoints(){
-	int minlen=this->fuelingPointsPool[0].;
-	FuelingPoint f=FuelingPoint();
+	/*int minlen=this->fuelingPointsPool[0].getVehicleDeque().size();
+	int minPoolIndex=0;
+	int poolIndex=0;
 
 
 	while (!(this->vehicleDeque.empty()))
 	{
-
 		for (FuelingPoint f : this->fuelingPointsPool){
+				if (f.getVehicleDeque().size()<minlen){
+					minlen=f.getVehicleDeque().size();
+				}
+
 
 			}
-	}
+	}*/
 
 }
 

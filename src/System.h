@@ -9,6 +9,7 @@
 #define SYSTEM_H_
 #include "ClientServerSockets/ServerSocket.h"
 #include "ClientServerSockets/SocketException.h"
+#include "Station.h"
 #include <string>
 #include <iostream>
 

@@ -8,6 +8,7 @@ CPP_SRCS += \
 ../src/FuelingPoint.cpp \
 ../src/Simulation.cpp \
 ../src/Station.cpp \
+../src/System.cpp \
 ../src/Vehicle.cpp \
 ../src/VehicleFactory.cpp \
 ../src/main.cpp 
@@ -17,6 +18,7 @@ OBJS += \
 ./src/FuelingPoint.o \
 ./src/Simulation.o \
 ./src/Station.o \
+./src/System.o \
 ./src/Vehicle.o \
 ./src/VehicleFactory.o \
 ./src/main.o 
@@ -26,6 +28,7 @@ CPP_DEPS += \
 ./src/FuelingPoint.d \
 ./src/Simulation.d \
 ./src/Station.d \
+./src/System.d \
 ./src/Vehicle.d \
 ./src/VehicleFactory.d \
 ./src/main.d 

@@ -1,7 +1,8 @@
 /*
+
  * Thursday, 7 November 2012
  * Corrected signature of main
- */
+
 #include "ServerSocket.h"
 #include "SocketException.h"
 #include <string>
@@ -51,3 +52,4 @@ int main ( int argc, char * argv[] )
 }
 
 
+*/

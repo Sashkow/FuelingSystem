@@ -3,6 +3,8 @@
 #define FUELINGPOINT_H_
 
 #include <vector>
+#include <deque>
+#include "Vehicle.h"
 
 using namespace std;
 
@@ -19,7 +21,7 @@ public:
 	~FuelingPoint();
 	void updateState();
 
-}
+
 FuelingPointState getState() const {
 	return state;
 }
@@ -35,6 +37,6 @@ deque<Vehicle*> getVehicleDeque() const {
 void setVehicleDeque(deque<Vehicle*> vehicleDeque) {
 	this->vehicleDeque = vehicleDeque;
 }
-;
+};
 
 #endif /* FUELINGPOINT_H_ */

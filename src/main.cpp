@@ -1,4 +1,4 @@
-//============================================================================
+ ClientSocket("localhost", 30000)//============================================================================
 // Name        : FuelingSystem.cpp
 // Author      :
 // Version     :
@@ -87,7 +87,7 @@ int main() {
 
 	Station station=Station();
 
-	station.addToVehicleDeque(v);
+	station.addToVehicleDeque();
 
 	station.processVehicles();
 
